@@ -12,13 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call([
+            RelationSeeder::class,
+            AdvertisingSeeder::class,
+            PlatformSeeder::class
+        ]);
        \App\Models\PlatformTransaction::factory(100)->create();
-
-       $this->call([
-           RelationSeeder::class,
-           AdvertisingSeeder::class,
-           PlatformSeeder::class
-       ]);
 
 
 

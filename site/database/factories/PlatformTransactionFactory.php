@@ -23,8 +23,8 @@ class PlatformTransactionFactory extends Factory
         return [
             'platform_id' => rand(1,3),
             'clicks'      => rand(1,300),
-            'spend'       => mt_rand (100*10, 500*10) / 10,
-            'revenue'     => (mt_rand (100*10, 500*10) / 10) * 2,
+            'spend'       => mt_rand (10*10, 50*10) / 10,
+            'revenue'     => (mt_rand (10*10, 50*10) / 10) * 2,
             'impressions' => rand(10,500),
             'created_at'  => Carbon::now()->addDay(rand(1,30))->format('Y.m.d')
         ];
