@@ -13,7 +13,19 @@ class ReportController extends Controller
     public function __construct(protected ReportInterface $repository,  protected  Response $response)
     {
     }
-
+    /**
+     * @OA\Get(
+     *     path="/api/getPlatformProfit/2",
+     *     tags={"getPlatformProfit"},
+     *     summary="Test",
+     *
+     *     @OA\Response(
+     *         response="200",
+     *         description="Lorem",
+     *         @OA\JsonContent()
+     *     ),
+     * )
+     */
     public function getPlatformProfit(Request $request,$id)
     {
         $datas = $this->repository->getPlatformProfit($request,$id);
@@ -24,7 +36,19 @@ class ReportController extends Controller
         }
         return $this->response->sendResponse( new ReportResource($datas));
     }
-
+    /**
+     * @OA\Get(
+     *     path="/api/getAllAdvertisingProfit",
+     *     tags={"getPlatformProfit"},
+     *     summary="Test",
+     *
+     *     @OA\Response(
+     *         response="200",
+     *         description="Lorem",
+     *         @OA\JsonContent()
+     *     ),
+     * )
+     */
     public function getAllAdvertisingProfit(Request $request)
     {
         $datas = $this->repository->getAllAdvertisingProfit($request);

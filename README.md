@@ -17,6 +17,7 @@
 * Laravel Seed && Factory
 * Error Handling Control
 * Composer v2.5.8
+* Swagger Api Document
 
 ###### Kurulum
 - Docker ile kurulum için
@@ -25,11 +26,12 @@
 - docker exec -it api-app bash 
 - composer install
 - php artisan migrate && php artisan test && php artisan db:seed
+- php artisan l5-swagger:generate
 ###### Normal kurulum
 - Proje dizinide;
 - composer install
 - php artisan migrate && php artisan test && php artisan db:seed
-
+- php artisan l5-swagger:generate
 
 
 
@@ -43,3 +45,5 @@
  - Calculate Helper ile datamapping yaparken php ile hesaplamalar eklenmiştir.
  - Resource methotların testleri yazılmıştır.
  - Postman collection projede paylaşılmıştır rapor endpointleri ile örnekleri inceleye bilirsiniz.
+ - Swagger  url sonuna  /api/documentation ekleyerek UI açabilirsiniz. Örnek endpointleri inceleyebilirsiniz.
+ - Örnek link: localhost:8000/api/documentation 
