@@ -1,0 +1,54 @@
+version: "3.8"
+services:
+  # PHP service
+  app:
+    build: ./docker/php/.
+    container_name: api-app
+    working_dir: /var/www/site
+    volumes:
+      - ./site:/var/www/site
+    networks:
+      - app-network
+
+  # Nginx service
+  nginx:
+    image: nginx:alpine
+    container_name: api-nginx
+    working_dir: /var/www/site
+    ports:
+      - "8000:80"
+    volumes:
+      - ./site:/var/www/site
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - app-network
+
+  #Mysql
+  mysql:
+    image: mysql:8
+    container_name: api-mysql
+    ports:
+      - 3306:3306
+    networks:
+      - app-network
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_DATABASE=case
+
+  # PhpMyadmin service
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: api-phpmyadmin
+    restart: always
+    ports:
+      - "8001:80"
+    environment:
+      - PMA_ARBITRARY=1
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
