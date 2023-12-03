@@ -46,4 +46,5 @@
  - Resource methotların testleri yazılmıştır.
  - Postman collection projede paylaşılmıştır rapor endpointleri ile örnekleri inceleye bilirsiniz.
  - Swagger  url sonuna  /api/documentation ekleyerek UI açabilirsiniz. Örnek endpointleri inceleyebilirsiniz.
- - Örnek link: localhost:8000/api/documentation 
+ - Örnek link: localhost:8000/api/documentation
+ - Projede platform ve reklam ilişkisi bulunmaktadır, Platform transaction ları seed ile eklerken observe ile maliyeti platform daki bakiyeden düşürtüyorum, burada iki model birbirini dinliyor ve işlem yapıyor. Listining eventine örnek olsun diye böyle bir yaklaşımda bulundum.
