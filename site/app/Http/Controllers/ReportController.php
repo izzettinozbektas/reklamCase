@@ -15,9 +15,19 @@ class ReportController extends Controller
     }
     /**
      * @OA\Get(
-     *     path="/api/getPlatformProfit/2",
+     *     path="/api/getPlatformProfit/{id}",
      *     tags={"getPlatformProfit"},
      *     summary="Test",
+     *
+     *     @OA\Parameter(
+     *          name="id",
+     *          description="Platform id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
      *
      *     @OA\Response(
      *         response="200",
